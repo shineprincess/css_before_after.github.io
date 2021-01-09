@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Before and After</title>
+    <link href="https://fonts.googleapis.com/css2?family=Yeon+Sung&display=swap" rel="stylesheet">
+
+    <style type="text/css">
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Yeon Sung', cursive;
+        }
+
+        :root {
+            --b-af-width :10vw;                             /* before after ka width */
+            --b-af-mo-width :15vw;
+            --b-af-sm-width :20vw;
+        }
+
+        ::selection {
+            background: mediumspringgreen;
+        }
+        .parent_div {
+            width: 100vw;
+            height: 100vh;
+            background: rgb(0, 130, 170);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h1 {
+            color:rgb(209, 118, 32);
+            text-align: center;
+            text-shadow: 0 2px 5px rgba(243, 239, 12, 0.5) ;
+            position: relative;
+        }
+
+        h1::before{
+            content: "";
+            position: absolute;
+            top: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 10vw;
+            border-bottom: 5px solid #f1493d;
+        }
+        h1::after{
+            content: "";
+            /* display: block; */
+            position: absolute;
+            bottom: -20%;
+            left:50%;
+            transform: translateX(-50%);
+            width: 10vw;
+            border-bottom: 5px solid #f1493d;
+        }
+
+        @media (max-width: 768px) {
+            h1::before{
+                width: 20vw;
+            }
+
+            h1::after{
+                width: 20vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="parent_div">
+        <h1>Shineprincess</h1>
+    </div>
+</body>
+</html>
